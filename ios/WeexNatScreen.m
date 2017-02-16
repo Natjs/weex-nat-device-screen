@@ -1,14 +1,14 @@
 //
-//  NatWeexScreen.m
+//  WeexNatScreen.m
 //
 //  Created by huangyake on 17/1/7.
 //  Copyright © 2017 Nat. All rights reserved.
 //
 
-#import "NatWeexScreen.h"
+#import "WeexNatScreen.h"
 #import "NatScreen.h"
 
-@implementation NatWeexScreen
+@implementation WeexNatScreen
 WX_EXPORT_METHOD(@selector(info:))
 WX_EXPORT_METHOD(@selector(getBrightness:))
 WX_EXPORT_METHOD(@selector(setBrightness::))

@@ -1,5 +1,5 @@
 //
-//  NatWeexScreen.h
+//  WeexNatScreen.h
 //
 //  Created by huangyake on 17/1/7.
 //  Copyright © 2017 Nat. All rights reserved.
@@ -9,7 +9,7 @@
 #import <WeexSDK/WeexSDK.h>
 
 
-@protocol NatWeexScreenPro <WXModuleProtocol>
+@protocol WeexNatScreenPro <WXModuleProtocol>
 
 - (void)info:(WXModuleCallback)callback;
 - (void)getBrightness:(WXModuleCallback)callback;
@@ -18,6 +18,6 @@
 
 @end
 
-@interface NatWeexScreen : NSObject<NatWeexScreenPro>
+@interface WeexNatScreen : NSObject<WeexNatScreenPro>
 
 @end
