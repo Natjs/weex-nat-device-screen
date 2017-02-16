@@ -16,7 +16,7 @@
          <config-file target="WeexpluginConfig.xml" parent="/*">
              <feature name="WXTestModule">
                  <param name="category" value="module" />
-                 <param name="ios-package" value="WeexNatDeviceBase" />
+                 <param name="ios-package" value="WeexNatScreen" />
                  <param name="api" value="nat/device/screen" />
              </feature>
          </config-file>
