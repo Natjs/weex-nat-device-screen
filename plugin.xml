@@ -42,7 +42,7 @@
              src="android/DeviceScreenModule.java"
             target-dir="src/com/alibaba/weex/nat/DeviceScreenModule.java" />
 
-        <framework src="com.nat:device-screen:1.0.1" />
+        <framework src="com.nat:device-screen:1.0.2" />
      </platform>
 
 </plugin>
