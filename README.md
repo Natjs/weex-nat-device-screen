@@ -1,12 +1,15 @@
 # nat-device-screen
 
+- [Documentation](http://natjs.com/#/#screen)
+- [Github](https://github.com/natjs/weex-nat-device-screen)
+
 ## Installation
 ```
 weexpack plugin add nat-device-screen
 ```
 
 ```
-npm install weex-nat --save
+npm install natjs --save
 ```
 
 ## Usage
@@ -15,7 +18,7 @@ Use in weex file (.we)
 
 ```html
 <script>
-import 'Nat' from 'weex-nat'
+import 'Nat' from 'natjs'
 
 // get info
 Nat.screen.info((err, ret) => {
