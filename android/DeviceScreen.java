@@ -7,26 +7,27 @@ import android.os.Build;
 import android.provider.Settings;
 import android.widget.Toast;
 
-import com.nat.device_screen.HLConstant;
-import com.nat.device_screen.HLModuleResultListener;
-import com.nat.device_screen.HLScreenModule;
-import com.nat.device_screen.HLUtil;
+import com.nat.device_screen.Constant;
+import com.nat.device_screen.ModuleResultListener;
+import com.nat.device_screen.ScreenModule;
+import com.nat.device_screen.Util;
+
 import com.taobao.weex.annotation.JSMethod;
 import com.taobao.weex.bridge.JSCallback;
 import com.taobao.weex.common.WXModule;
 
 /**
- * Created by Daniel on 17/2/17.
- * Copyright (c) 2017 Nat. All rights reserved.
+ * Created by Acathur on 17/2/17.
+ * Copyright (c) 2017 Instapp. All rights reserved.
  */
 
-public class DeviceScreenModule extends WXModule{
+public class DeviceScreen extends WXModule{
 
     JSCallback mSetBritnessCallback;
     float mBritness;
     @JSMethod
     public void info(final JSCallback jsCallback){
-        HLScreenModule.getInstance(mWXSDKInstance.getContext()).info(new HLModuleResultListener() {
+        ScreenModule.getInstance(mWXSDKInstance.getContext()).info(new ModuleResultListener() {
             @Override
             public void onResult(Object o) {
                 jsCallback.invoke(o);
@@ -36,7 +37,7 @@ public class DeviceScreenModule extends WXModule{
 
     @JSMethod
     public void getBrightness(final JSCallback jsCallback){
-        HLScreenModule.getInstance(mWXSDKInstance.getContext()).getBrightness(new HLModuleResultListener() {
+        ScreenModule.getInstance(mWXSDKInstance.getContext()).getBrightness(new ModuleResultListener() {
             @Override
             public void onResult(Object o) {
                 jsCallback.invoke(o);
@@ -46,7 +47,7 @@ public class DeviceScreenModule extends WXModule{
 
     @JSMethod
     public void getOrientation(final JSCallback jsCallback){
-        HLScreenModule.getInstance(mWXSDKInstance.getContext()).getOrientation(new HLModuleResultListener() {
+        ScreenModule.getInstance(mWXSDKInstance.getContext()).getOrientation(new ModuleResultListener() {
             @Override
             public void onResult(Object o) {
                 jsCallback.invoke(o);
@@ -56,7 +57,7 @@ public class DeviceScreenModule extends WXModule{
 
     @JSMethod
     public void lockOrientation(String orientation, final JSCallback jsCallback){
-        HLScreenModule.getInstance(mWXSDKInstance.getContext()).lockOrientation((Activity) mWXSDKInstance.getContext(), orientation, new HLModuleResultListener() {
+        ScreenModule.getInstance(mWXSDKInstance.getContext()).lockOrientation((Activity) mWXSDKInstance.getContext(), orientation, new ModuleResultListener() {
             @Override
             public void onResult(Object o) {
                 jsCallback.invoke(o);
@@ -66,7 +67,7 @@ public class DeviceScreenModule extends WXModule{
 
     @JSMethod
     public void unlockOrientation(final JSCallback jsCallback){
-        HLScreenModule.getInstance(mWXSDKInstance.getContext()).unlockOrientation((Activity) mWXSDKInstance.getContext(), new HLModuleResultListener() {
+        ScreenModule.getInstance(mWXSDKInstance.getContext()).unlockOrientation((Activity) mWXSDKInstance.getContext(), new ModuleResultListener() {
             @Override
             public void onResult(Object o) {
                 jsCallback.invoke(o);
@@ -81,7 +82,7 @@ public class DeviceScreenModule extends WXModule{
             mBritness = brightness;
             Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
             intent.setData(Uri.parse("package:" + mWXSDKInstance.getContext().getPackageName()));
-            ((Activity)mWXSDKInstance.getContext()).startActivityForResult(intent, HLConstant.WRITE_SETTINGS_REQUEST_CODE);
+            ((Activity)mWXSDKInstance.getContext()).startActivityForResult(intent, Constant.WRITE_SETTINGS_REQUEST_CODE);
         } else {
             setBrightness(brightness);
             getBrightness(jsCallback);
@@ -91,13 +92,13 @@ public class DeviceScreenModule extends WXModule{
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == HLConstant.WRITE_SETTINGS_REQUEST_CODE) {
+        if (requestCode == Constant.WRITE_SETTINGS_REQUEST_CODE) {
 
             if (Settings.System.canWrite(mWXSDKInstance.getContext())) {
                 setBrightness(mBritness);
                 getBrightness(mSetBritnessCallback);
             } else {
-                mSetBritnessCallback.invoke(HLUtil.getError(HLConstant.CAMERA_PERMISSION_DENIED, HLConstant.CAMERA_PERMISSION_DENIED_CODE));
+                mSetBritnessCallback.invoke(Util.getError(Constant.CAMERA_PERMISSION_DENIED, Constant.CAMERA_PERMISSION_DENIED_CODE));
             }
         }
     }

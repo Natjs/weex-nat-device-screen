@@ -1,19 +1,18 @@
 {
-  "name": "nat-device-screen",
-  "version": "0.1.2",
-  "description": "Nat.js module: Screen",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "Nat",
-    "device",
-    "screen",
-    "Weex",
-    "Plugin",
-    "module",
-    "handle"
-  ],
-  "author": "Acathur",
-  "license": "MIT"
+    "version": "0.1.3",
+    "platform": [
+        "ios",
+        "android"
+    ],
+    "description": "Nat.js module: Screen",
+    "keywords": [
+        "weex",
+        "plugin",
+        "nat",
+        "natjs",
+        "device",
+        "screen"
+    ],
+    "license": "MIT",
+    "name": "nat-device-screen"
 }

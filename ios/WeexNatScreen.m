@@ -2,13 +2,14 @@
 //  WeexNatScreen.m
 //
 //  Created by huangyake on 17/1/7.
-//  Copyright © 2017 Nat. All rights reserved.
+//  Copyright © 2017 Instapp. All rights reserved.
 //
 
 #import "WeexNatScreen.h"
 #import "NatScreen.h"
 
 @implementation WeexNatScreen
+@synthesize weexInstance;
 WX_EXPORT_METHOD(@selector(info:))
 WX_EXPORT_METHOD(@selector(getBrightness:))
 WX_EXPORT_METHOD(@selector(setBrightness::))
