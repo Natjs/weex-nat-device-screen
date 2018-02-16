@@ -1,6 +1,6 @@
 # nat-device-screen
 
-- [Documentation](http://natjs.com/#/#screen)
+- [Documentation](http://natjs.com/#/reference/device/screen)
 - [Github](https://github.com/natjs/weex-nat-device-screen)
 
 ## Installation
@@ -14,11 +14,11 @@ npm install natjs --save
 
 ## Usage
 
-Use in weex file (.we)
+Use in weex project (`.vue`/`.we`)
 
 ```html
 <script>
-import 'Nat' from 'natjs'
+import Nat from 'natjs'
 
 // get info
 Nat.screen.info((err, ret) => {

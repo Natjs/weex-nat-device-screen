@@ -1,5 +1,5 @@
 //
-//  WeexNatScreen.h
+//  WeexNatDeviceScreen.h
 //
 //  Created by huangyake on 17/1/7.
 //  Copyright © 2017 Instapp. All rights reserved.
@@ -8,8 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <WeexSDK/WeexSDK.h>
 
-
-@protocol WeexNatScreenPro <WXModuleProtocol>
+@protocol WeexNatDeviceScreenPro <WXModuleProtocol>
 
 - (void)info:(WXModuleCallback)callback;
 - (void)getBrightness:(WXModuleCallback)callback;
@@ -18,6 +17,5 @@
 
 @end
 
-@interface WeexNatScreen : NSObject<WeexNatScreenPro>
-
+@interface WeexNatDeviceScreen : NSObject<WeexNatDeviceScreenPro>
 @end
